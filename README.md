@@ -6,10 +6,10 @@ https://tech.xenit.se/querying-microsoft-graph-with-powershell-the-easy-way/
 
 # Example
 
-#Get All users and Groups
-```powershell
-$credential = New-Object System.Management.Automation.PSCredential($appID,(ConvertTo-SecureString $SPSecret -AsPlainText -Force))
 
+```powershell
+#Get a token
+$credential = New-Object System.Management.Automation.PSCredential($appID,(ConvertTo-SecureString $SPSecret -AsPlainText -Force))
 $token = Get-MSGraphAuthToken -credential $credential -tenantID $TenantID
 
 #Get all users
@@ -23,5 +23,4 @@ Invoke-MSGraphQuery -URI "https://graph.microsoft.com/v1.0/groups/$($Group.id)/m
 
 #Get all Onedrive items for a user
 Get-OneDriveItems -UserId $User.id -token $token -credential $credential -TenantID $TenantID
-
 ```

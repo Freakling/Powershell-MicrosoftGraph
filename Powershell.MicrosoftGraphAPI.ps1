@@ -119,11 +119,16 @@ Param(
 
 Function Get-OneDriveItems {
 Param(
-    $UserId,
-    $token,
-    $credential,
-    $TenantID,
-    $itemId
+    [parameter(Mandatory=$true)]
+    [string]$UserId,
+    [parameter(Mandatory=$true)]
+    [string]$token,
+    [parameter(Mandatory=$true)]
+    [PSCredential]$credential,
+    [parameter(Mandatory=$true)]
+    [string]$TenantID,
+    [parameter(Mandatory=$false)]
+    [string]$itemId
 )
     $AllItems = @()
 

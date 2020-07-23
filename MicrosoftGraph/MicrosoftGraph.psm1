@@ -64,10 +64,10 @@ Param(
     [array]$returnvalue = $()
     Try{
         If($body){
-            $Response = Invoke-RestMethod -Uri $URI –Headers $authHeader -Body $Body –Method $method -ErrorAction Stop
+            $Response = Invoke-RestMethod -Uri $URI -Headers $authHeader -Body $Body -Method $method -ErrorAction Stop
         }
         Else{
-            $Response = Invoke-RestMethod -Uri $URI –Headers $authHeader –Method $method -ErrorAction Stop
+            $Response = Invoke-RestMethod -Uri $URI -Headers $authHeader -Method $method -ErrorAction Stop
         }
     }
     Catch{
@@ -80,10 +80,10 @@ Param(
             }
             $returnvalue = $()
             If($body){
-                $Response = Invoke-RestMethod -Uri $URI –Headers $authHeader -Body $Body –Method $method -ErrorAction Stop
+                $Response = Invoke-RestMethod -Uri $URI -Headers $authHeader -Body $Body -Method $method -ErrorAction Stop
             }
             Else{
-                $Response = Invoke-RestMethod -Uri $uri –Headers $authHeader –Method $method
+                $Response = Invoke-RestMethod -Uri $uri -Headers $authHeader -Method $method
             }
         }
         Else{
